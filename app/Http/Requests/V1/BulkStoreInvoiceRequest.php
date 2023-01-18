@@ -24,12 +24,13 @@ class BulkStoreInvoiceRequest extends FormRequest
      */
     public function rules()
     {
+        //data:[{}]
         return [
-            /** use *.property name */
+            /** use *.property name append */
             '*.customerId' => ['required','integer'],
             '*.amount'     => ['required', 'numeric'],//individual or Business
             '*.status'     => ['required',Rule::in(['B','P','V','b','p','v'])],
-            '*.billedDate'  => ['required','date_format:Y-m-d H:i:s'],
+            '*.billedDate' => ['required','date_format:Y-m-d H:i:s'],
             '*.paidDate'   => ['date_format:Y-m-d H:i:s','nullable'],
 
         ];
@@ -38,7 +39,7 @@ class BulkStoreInvoiceRequest extends FormRequest
     protected  function prepareForValidation()
     {
         $data = [];
-        /**Iterate each array*/
+        /**Iterate each array ,turn input $this->toArray()*/
         foreach ($this->toArray() as $obj){
             $obj['customer_id'] = $obj['customerId'] ?? null;
             $obj['billed_date'] = $obj['billedDate'] ?? null;

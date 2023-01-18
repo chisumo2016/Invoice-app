@@ -182,7 +182,32 @@
                 }
             }
 ### IMPLEMENTING BUILD INSERT 
-        
+    Payload will have an arrays
+            [{customerId: } ,{customerId: }]
+    Were goingo to validate an individual array inside an array
+    - Add the api route
+    - Create a bulkStore() method in the InvoiceController
+    - Create a request validation rules called app/Http/Requests/V1/BulkStoreInvoiceRequest.php
+            - Write all logic inside of this files.
+            - Call the BulkStoreInvoiceRequest in bulkStore() in the InvoiceController
+            - Write all the logic in in the bulkStore() 
+    - TEST THE API via Postman
+            POST : http://invoice-api.test/api/v1/invoices/bulk
+                    {
+                        "customerId": "1",
+                        "amount": "0",
+                        "status": "B",
+                        "billDate": "2015-09-04 09:13:26",
+                        "paidDate": null
+                    },
+                    {
+                    "customerId": 1,
+                    "amount": "200",
+                    "status": "P",
+                    "billDate": "2015-09-04 09:13:26",
+                    "paidDate": null
+                    }
+
             
 
 
