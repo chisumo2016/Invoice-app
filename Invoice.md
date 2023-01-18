@@ -147,8 +147,12 @@
                         return new CustomerResource($customer);
                     }
 
-
-            
+## CREATING RESOURCE WITH POST REQUEST
+    - Create a Fillable array in the Customer Model
+    - Add the small logic in store() in CustomerController
+        return  new CustomerResource(Customer::create($request->all()));
+    - Add the logic of validation in the request
+            Information comes from client so we need to transform or postalCode
         
             
 
