@@ -204,11 +204,13 @@
                     "customerId": 1,
                     "amount": "200",
                     "status": "P",
-                    "billDate": "2015-09-04 09:13:26",
+                    "billedDate": "2015-09-04 09:13:26",
                     "paidDate": null
                     }
 
-            
+    ###  PROTECTING ROUTES WITH SANCTUM    
+        Provide the token 
+            Install and puplish
 
 
 
