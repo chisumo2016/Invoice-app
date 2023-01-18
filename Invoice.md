@@ -153,6 +153,34 @@
         return  new CustomerResource(Customer::create($request->all()));
     - Add the logic of validation in the request
             Information comes from client so we need to transform or postalCode
+    TEST:
+        We can use the Postman to create a new recode
+            http://invoice-api.test/api/v1/customers/231
+
+## UPDATING WITH PUT AND PATCH
+    PUT: Replace the entire entity, you can't leave antything out 
+            {
+            "data": {
+                    "id": 231,
+                    "name": "Jerermy Hunter",
+                    "type": "I",
+                    "email": "jeremey@gmai.com",
+                    "address": "1234 Whennener",
+                    "city": "Some Town",
+                    "state": "Cansass",
+                    "postalCode": "22223"
+                }
+            }
+    PATCH: we can select what we want to edit  
+        {
+            "data": {
+                    
+                    "address": "1234 Whennener",
+                    "city": "Some Town",
+                    "state": "Cansass",
+                    "postalCode": "22223"
+                }
+            }
         
             
 
