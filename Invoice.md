@@ -64,6 +64,46 @@
         We have ability to use AND ?postalCode[gt]=9000
     NOTE
         The code isnt not reusable in other service.
+
+## FILTERING MORE DATA 
+        we need to implement other filter so we can use in the future
+        - To use the base class to abstact .
+        - Change the Folder into Filters not services 
+        - Change tthe name of class to CustomerFilter
+        - Create a file called apiFilter.php inside Filters
+                - copy everything from customerFiltter annd paste
+                - change the namespace
+                - import namespace in CustomerFilter
+                - modifify our CustomerController
+                        we can create a facades for CustomersFilter , not new constructtor CustomersFilter is very complicated
+                        Also we can use tthe service conttainer 
+        - Let us implement the filter for invoice call Filters/V1/InvoicesFilter.php
+                - Implmenet the logic in the InvoiceController
+                        on the index() method 
+        - TEST
+                http://invoice-api.test/api/v1/invoices  Passed
+                http://invoice-api.test/api/v1/invoices  Passed
+
+        - Note
+            Links doesnt contains the query string
+            In the invoiceController
+            return new InvoiceCollection(Invoice::where($queryItems)->paginate());
+                TOBE
+                $invoices = Invoice::where($queryItems)->paginate();
+                return new InvoiceCollection($invoices->appends($request->query()));
+              PLEASE DO FOR CUSTOMERS CONTROLLERS
+
+
+
+
+
+
+
+
+
+
+
+
       
         
 
