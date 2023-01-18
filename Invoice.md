@@ -211,9 +211,12 @@
     ###  PROTECTING ROUTES WITH SANCTUM    
         Provide the token 
             Install and puplish
+        Login written in the web file to generate the token
 
 
-
+### AUTHORIZING REQUESTS WITH TOKEN ABILITIES
+    - sanctumm has fantantisc feature  to authorized , allow or deny authorization for certain types of requests.
+    - Capability  of token, client can requesting to do such as creating, updating oor deleting
 
 
 
