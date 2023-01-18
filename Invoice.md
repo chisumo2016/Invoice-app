@@ -36,7 +36,35 @@
                 specificc for working alot of thiing
 
                     php artisan make:resource V1/CustomerCollection     
-        
+                    php artisan make:resource V1/InnvoiceResource 
+                    php artisan make:resource V1/InnvoiceCollection     
+
+### FILTERING DATA
+    Provide an ability to filter the data.
+    Search is different from filtering
+    We'dont need search in api
+    Filtering thing getting GET request, return collection
+        customers , invoices
+        customers?postalCode[gt] =30000  - into array
+
+        Customer::where([['column', 'operator', 'value']])
+    Create a folder called services in app
+        app/Services/V1/CustomerQuery.php
+            Write a logic on this class
+            import inside the controoller
+    Testing filter  
+            http://invoice-api.test/api/v1/customers/?postalCode[gt]=3000
+        error: Call to undefined method App\Services\V1\CustomerQuery::operatorMap()
+        Solution: this operatorMap() isnt a mmethod is an array 
+    Testing search   (AND)
+        http://invoice-api.test/api/v1/customers?postalCode[gt]=9000  - Passed
+        http://invoice-api.test/api/v1/customers?postalCode[gt]=9000&type[eq]=I  - Passed
+    BUT
+        We dont have unabilitty to do OR  COMPLEX
+        We have ability to use AND ?postalCode[gt]=9000
+    NOTE
+        The code isnt not reusable in other service.
+      
         
 
 
