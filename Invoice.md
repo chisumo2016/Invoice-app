@@ -11,4 +11,8 @@
     - define all the column for custtomers and Invoice
 ## Designing and Seeding the Database
     - Gonna use Factory
+## Version and Defining Routes
+    - we need to versioning our api 
+    - We should put our controller in API folder FOLLOWED V1
+    php artisan help make:resource
             

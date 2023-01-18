@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\API\V1\CustomerController;
+use App\Http\Controllers\API\V1\InvoiceController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +18,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::resource('customers', CustomerController::class);
+Route::resource('invoices', InvoiceController::class);
